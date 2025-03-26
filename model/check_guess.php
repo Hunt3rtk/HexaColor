@@ -11,12 +11,12 @@ function check_digit($guess_digit, $target_digit): string {
     return 'incorrect';
 }
 
-function check_guess(): array {
+function check_guess($guess, $target): array {
     $results = [];
     
     // Split the hex strings into individual digits
-    $guess_digits = str_split($_COOKIE['guess']);
-    $target_digits = str_split($_COOKIE['target']);
+    $guess_digits = str_split($guess);
+    $target_digits = str_split($target);
     
     // Check each digit
     for ($i = 0; $i < 6; $i++) {
