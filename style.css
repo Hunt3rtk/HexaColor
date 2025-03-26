@@ -5,16 +5,9 @@
     --blue: #699ee8;
     --yellow: #fcda74;
     --red: #f97171;
+    --green: #2ecc71;
     --black: #272727;
     --bright-blue: #3287ff;
-}
-
-body {
-    background-color: var(--background);
-    display: block;
-    align-content: center;
-    justify-content: center;
-    font-family: "Ubuntu", sans-serif;
 }
 
 #red {
@@ -27,6 +20,14 @@ body {
 
 #blue {
     color: var(--blue);
+}
+
+body {
+    background-color: var(--background);
+    display: block;
+    align-content: center;
+    justify-content: center;
+    font-family: "Ubuntu", sans-serif;
 }
 
 nav {
@@ -81,11 +82,18 @@ main {
 
 }
 
-#target {
+#mainDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mainColors {
     float: left;
-    width: 40%;
-    height: 50%;
-    background-color: #f97171;
+    width: 200px;
+    height: 200px;
+    background-color: #000000;
     margin: 15px;
     text-align: center;
     border-radius: 20px;
@@ -93,27 +101,7 @@ main {
 
 }
 
-#target h2 {
-    margin: 10px;
-    background-color: var(--background);
-    border: solid var(--dark-background);
-    border-radius: 20px;
-    color: var(--black);
-}
-
-#guess {
-    float: right;
-    width: 40%;
-    height: 50%;
-    background-color: #fcda74;
-    margin: 15px;
-    text-align: center;
-    border-radius: 20px;
-    border: solid var(--dark-background);
-
-}
-
-#guess h2 {
+.mainColors h2 {
     margin: 10px;
     background-color: var(--background);
     border: solid var(--dark-background);
@@ -123,6 +111,10 @@ main {
 
 form {
     font-size: larger;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 form #text {
@@ -151,7 +143,9 @@ form #submit:hover {
 #previous {
     width: 100%;
     text-align: center;
-
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 #previous h2 {
@@ -161,37 +155,46 @@ form #submit:hover {
     border: solid var(--dark-background);
     border-radius: 20px;
     color: var(--black);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #previous ul {
-    display: flex;
-    justify-content: space-around;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: solid var(--dark-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 #previous ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 12%;
-    height: 100px;
-    background-color: var(--yellow);
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--light-background);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    line-height: 40px;
     border: solid var(--dark-background);
+    font-size: 24px;
+    font-weight: bold;
+    background-color: var(--light-background); /* Default grey for incorrect */
 }
 
-#previous ul li .previous_digit {
-    width: 70%;
-    height: 70%;
-    margin: 0px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--light-background);
-    border-radius: 20px;
-    color: var(--black);
+.correct {
+    background-color: var(--green) !important;
+}
+
+.close {
+    background-color: var(--yellow) !important;
+}
+
+.incorrect {
+    background-color: var(--red) !important;
 }
