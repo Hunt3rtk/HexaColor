@@ -3,7 +3,7 @@
     <?php foreach (array_reverse($_SESSION['previous_guesses']) as $prev_guess): ?>
         <ul style="background-color: #<?php echo $prev_guess; ?>">
 
-            <?php $target_digits = str_split($_COOKIE['target']); ?>
+            <?php $target_digits = str_split($_SESSION['target']); ?>
             <?php $guess_digits = str_split($prev_guess); ?>
             
             <?php for($i = 0; $i < 6; $i++): ?>

@@ -2,18 +2,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-<script src="hex.js"></script>
-<?php
 
+<?php
     session_start();
-    
-    // Initialize target only if it's not set in cookie
-    if (!isset($_COOKIE['target'])) {
-        echo "<script>document.addEventListener('DOMContentLoaded', function() {
-            let target = generate();
-            document.cookie = 'target=' + target;
-            window.location.reload(); // Reload once to ensure cookie is set
-        });</script>";
+
+    // Generate new target if none exists
+    if (!isset($_SESSION['target'])) {
+        function generate() {
+            $target = '';
+            for ($i = 0; $i < 6; $i++) {
+                $target .= dechex(rand(0, 15));
+            }
+            return $target;
+        }
+
+        $_SESSION['target']= generate();
     }
     
     // Initialize session variables if not set

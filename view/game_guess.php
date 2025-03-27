@@ -1,5 +1,5 @@
 <div id="mainDiv">
-    <div class="mainColors" style="background-color: #<?php echo $_COOKIE['target'] ?>">
+    <div class="mainColors" style="background-color: #<?php echo $_SESSION['target'] ?>">
             <h2>TARGET</h2>
         </div>
     <div class="mainColors" style="background-color: #<?php echo $guess ?>">
